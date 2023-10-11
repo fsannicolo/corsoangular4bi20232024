@@ -1,0 +1,9 @@
+<div>
+    <h1>in child</h1>
+    <ul>
+        <li *ngFor="let messaggio of messaggiRicevuti; let i = index">
+            <button (click)="eliminaMessaggio(i)">Elimina</button> 
+            {{messaggio}}</li>
+    </ul>
+</div>
+

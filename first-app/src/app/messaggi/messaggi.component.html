@@ -1,0 +1,27 @@
+<h1>Messaggi</h1>
+
+<div>
+    <input type="text" [(ngModel)]="nuovoMessaggio">
+    <button (click)="aggiungiMessaggio()">Aggiungi</button>
+</div>
+
+<ul>
+    <li *ngFor="let messaggio of messaggi">{{messaggio}}</li>
+</ul>
+
+<table border="1" *ngIf="messaggi.length > 0; else noMessaggi">
+    <tr>
+        <th>ID</th>
+        <th>Messaggio</th>
+        <th>Operazione</th>
+    </tr>
+    <tr *ngFor="let messaggio of messaggi; let i=index">
+        <td>{{i + 1}}</td>
+        <td>{{messaggio}}</td>
+        <td><button (click)="eliminaMessaggio(i)">Cancella</button></td>
+    </tr>
+</table>
+
+<ng-template #noMessaggi>
+    <p>Non ci sono messaggi</p>
+</ng-template>

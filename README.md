@@ -27,3 +27,24 @@ Node.js® è un runtime JavaScript costruito sul motore JavaScript V8 di Chrome.
 ```
 npm install -g @angular/cli
 ```
+
+## Angular
+
+### Creare un'applicazione
+```
+ng new nome-applicazione
+```
+
+**NB: per separare più termini in un nome usare il trattino!!!**
+
+> Per ricreare la cartella node_modules è sufficiente digitare il comando `npm install` facendo attenzione ad essere poszionati nella cartella dell'applicazione. nom usa il file **package.json** per capire quali pacchetti scaricare.
+
+### Mandare in esecuzione il web server di sviluppo: testare la nostra applicazione
+```
+ng serve
+```
+
+### Dichiarazione delle variabili in TS
+```
+nome: tipo = valore
+```
