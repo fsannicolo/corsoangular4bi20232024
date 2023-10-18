@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Studente } from 'src/app/common/studente.class';
 
 @Component({
@@ -7,9 +7,13 @@ import { Studente } from 'src/app/common/studente.class';
   styleUrls: ['./studente-out-child.component.css']
 })
 export class StudenteOutChildComponent {
+  @Output() nuovoStudente = new EventEmitter<Studente>();
   studente!: Studente;
 
   salvaStudente(nome: any, cognome: any, classe: any): void {
-    console.log(nome.value);
+    this.nuovoStudente.emit(new Studente(nome.value, cognome.value, classe.value));
+    nome.value = '';
+    cognome.value = '';
+    classe.value = '';
   }
 }

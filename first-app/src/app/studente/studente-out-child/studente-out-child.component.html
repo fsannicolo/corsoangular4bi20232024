@@ -1,6 +1,14 @@
-<p>
-    <input type="text" #nome>
-    <input type="text" #cognome>
-    <input type="text" #classe>
-    <button (click)="salvaStudente(nome, cognome, classe)">Salva</button>
-</p>
+<div class="row">
+    <div class="mb-3 col-4">
+        <input type="text" class="form-control" aria-label="Nome" placeholder="Nome..." #nome>
+    </div>
+    <div class="mb-3 col-4">
+        <input type="text" class="form-control" aria-label="Cognome" placeholder="Cognome..." #cognome>
+    </div>
+    <div class="mb-3 col-2">       
+        <input type="text" class="form-control" aria-label="Classe" placeholder="Classe..." #classe>
+    </div>    
+    <div class="mb-3 col-2">        
+        <button class="btn btn-primary" (click)="salvaStudente(nome, cognome, classe)">Aggiungi</button>
+    </div>
+</div>

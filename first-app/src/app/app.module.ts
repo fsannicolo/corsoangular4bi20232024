@@ -11,6 +11,8 @@ import { OutChildComponent } from './child-parent-example/out-child/out-child.co
 import { StudenteParentComponent } from './studente/studente-parent/studente-parent.component';
 import { StudenteInChildComponent } from './studente/studente-in-child/studente-in-child.component';
 import { StudenteOutChildComponent } from './studente/studente-out-child/studente-out-child.component';
+import { TestServiceComponent } from './test-service/test-service.component';
+import { InComponent } from './test-service/in/in.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { StudenteOutChildComponent } from './studente/studente-out-child/student
     OutChildComponent,
     StudenteParentComponent,
     StudenteInChildComponent,
-    StudenteOutChildComponent
+    StudenteOutChildComponent,
+    TestServiceComponent,
+    InComponent
   ],
   imports: [
     BrowserModule,

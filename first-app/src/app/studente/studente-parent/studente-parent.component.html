@@ -1,1 +1,9 @@
-<p>studente-parent works!</p>
+<div class="container-fluid bg-primary-subtle">
+    <h1 class="display-2 p-5">Gestione studenti</h1>
+</div>
+<div class="container mt-5">
+    <app-studente-out-child (nuovoStudente)="aggiungiStudente($event)"></app-studente-out-child>
+</div>
+<div class="container mt-5">
+    <app-studente-in-child [studenti]="studenti" (onElimina)="elimina($event)"></app-studente-in-child>
+</div>
