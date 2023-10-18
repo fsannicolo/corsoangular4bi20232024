@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { IInsegnante } from 'src/app/common/insegnante.interface';
 import { Studente } from 'src/app/common/studente.class';
+import { IStudente } from 'src/app/common/studente.interface';
 
 @Component({
   selector: 'app-studente-parent',
@@ -7,5 +9,6 @@ import { Studente } from 'src/app/common/studente.class';
   styleUrls: ['./studente-parent.component.css']
 })
 export class StudenteParentComponent {
-  studenti: Studente[] = [];  
+ studenti: IStudente[] = [{nome: 'Andrea', cognome: 'Trentini', classe:'4Bi'}];
+
 }

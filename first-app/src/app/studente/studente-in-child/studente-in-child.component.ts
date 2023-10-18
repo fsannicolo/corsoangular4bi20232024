@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IStudente } from 'src/app/common/studente.interface';
 
 @Component({
   selector: 'app-studente-in-child',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./studente-in-child.component.css']
 })
 export class StudenteInChildComponent {
-
+  @Input() studentiRicevuti!: IStudente[]
+  
 }

@@ -1,1 +1,13 @@
-<p>studente-in-child works!</p>
+<h2>In child studenti</h2>
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Classe</th>
+    </tr>
+    <tr *ngFor="let studente of studentiRicevuti">
+        <td>{{studente.nome}}</td>
+        <td>{{studente.cognome}}</td>
+        <td>{{studente.classe}}</td>
+    </tr>
+</table>
