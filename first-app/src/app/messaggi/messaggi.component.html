@@ -1,27 +1,43 @@
-<h1>Messaggi</h1>
-
-<div>
-    <input type="text" [(ngModel)]="nuovoMessaggio">
-    <button (click)="aggiungiMessaggio()">Aggiungi</button>
+<div class="container-fluid bg-primary-subtle">
+    <h1 class="display-2 p-5">Esempi con direttive strutturali</h1>
 </div>
-
-<ul>
-    <li *ngFor="let messaggio of messaggi">{{messaggio}}</li>
-</ul>
-
-<table border="1" *ngIf="messaggi.length > 0; else noMessaggi">
-    <tr>
-        <th>ID</th>
-        <th>Messaggio</th>
-        <th>Operazione</th>
-    </tr>
-    <tr *ngFor="let messaggio of messaggi; let i=index">
-        <td>{{i + 1}}</td>
-        <td>{{messaggio}}</td>
-        <td><button (click)="eliminaMessaggio(i)">Cancella</button></td>
-    </tr>
-</table>
-
-<ng-template #noMessaggi>
-    <p>Non ci sono messaggi</p>
-</ng-template>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-9">
+            <input type="text" class="form-control" [(ngModel)]="nuovoMessaggio">
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary w-100" (click)="aggiungiMessaggio()">Aggiungi</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <ul>
+                <li *ngFor="let messaggio of messaggi">{{messaggio}}</li>
+            </ul>
+        </div>
+        <div class="col">
+            <table class="table" *ngIf="messaggi.length > 0; else noMessaggi">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Messaggio</th>
+                        <th scope="col">Operazione</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let messaggio of messaggi; let i=index">
+                        <th scope="row">{{i + 1}}</th>
+                        <td>{{messaggio}}</td>
+                        <td><button class="btn btn-danger" (click)="eliminaMessaggio(i)">Cancella</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        
+    <ng-template #noMessaggi>
+        <div class="alert alert-primary" role="alert">
+            Non ci sono messaggi
+        </div>
+    </ng-template>

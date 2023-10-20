@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { MessaggiComponent } from './messaggi/messaggi.component';
@@ -20,6 +21,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ObservablesComponent } from './observables/observables/observables.component';
 import { ObservablesContainerComponent } from './observables/observables-container/observables-container.component';
+import { SubjectContainerComponent } from './subject/subject-container/subject-container.component';
+import { LogEmitterComponent } from './subject/log-emitter/log-emitter.component';
+import { LogReceiverAComponent } from './subject/log-receiver-a/log-receiver-a.component';
+import { LogReceiverBComponent } from './subject/log-receiver-b/log-receiver-b.component';
+import { HttpclientComponent } from './httpclient/httpclient.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -28,7 +34,9 @@ const routes: Routes = [
   {path: 'in-out-parent', component: InOutParentComponent},
   {path: 'studente-parent', component: StudenteParentComponent},
   {path: 'studente-service', component: StudenteContainerComponent},
-  {path: 'observables', component: ObservablesContainerComponent}
+  {path: 'observables', component: ObservablesContainerComponent},
+  {path: 'subject', component: SubjectContainerComponent},
+  {path: 'httpclient', component: HttpclientComponent}
 ]
 
 
@@ -50,12 +58,18 @@ const routes: Routes = [
     StudenteContainerComponent,
     HomeComponent,
     ObservablesComponent,
-    ObservablesContainerComponent
+    ObservablesContainerComponent,
+    SubjectContainerComponent,
+    LogEmitterComponent,
+    LogReceiverAComponent,
+    LogReceiverBComponent,
+    HttpclientComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

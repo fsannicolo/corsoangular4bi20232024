@@ -1,4 +1,13 @@
-<div>
-    <h1>out child</h1>
-    <p><input type="text" [(ngModel)]="nuovoMessaggio"><button (click)="salvaMessaggio()">Salva</button></p>
+<div class="container">
+    <div class="row mt-5">
+        <h2 class="display-6">Out child</h2>
+    </div>
+    <div class="row mt-5">
+        <div class="col-9">
+            <input type="text" class="form-control" [(ngModel)]="nuovoMessaggio">
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary w-100" (click)="salvaMessaggio()">Aggiungi</button>
+        </div>
+    </div>
 </div>

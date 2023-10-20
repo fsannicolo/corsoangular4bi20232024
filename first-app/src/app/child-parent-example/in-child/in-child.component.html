@@ -1,8 +1,8 @@
-<div>
-    <h1>in child</h1>
+<h2 class="display-6 mt-5">In child</h2>
+<div class="row mt-5">
     <ul>
-        <li *ngFor="let messaggio of messaggiRicevuti; let i = index">
-            <button (click)="eliminaMessaggio(i)">Elimina</button> 
+        <li class="mb-3" *ngFor="let messaggio of messaggiRicevuti; let i = index">
+            <button class="btn btn-danger" (click)="eliminaMessaggio(i)">Elimina</button> 
             {{messaggio}}</li>
     </ul>
 </div>

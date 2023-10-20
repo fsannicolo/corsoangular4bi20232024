@@ -1,2 +1,7 @@
-<app-out-child (messaggioDisponibile)="aggiungiMessaggio($event)"></app-out-child>
-<app-in-child [messaggiRicevuti]="messaggi" (richiediElimina)="eliminaMessaggio($event)"></app-in-child>
+<div class="container-fluid bg-primary-subtle">
+    <h1 class="display-2 p-5">Esempio con In/Out child</h1>
+</div>
+<div class="container mt-5">
+    <app-out-child (messaggioDisponibile)="aggiungiMessaggio($event)"></app-out-child>
+    <app-in-child [messaggiRicevuti]="messaggi" (richiediElimina)="eliminaMessaggio($event)"></app-in-child> 
+</div>
