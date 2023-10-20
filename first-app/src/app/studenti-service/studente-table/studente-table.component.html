@@ -1,0 +1,21 @@
+<table class="table" *ngIf="studenti.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Cognome</th>
+        <th scope="col">Classe</th>
+        <th scope="col"></th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let studente of studenti; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{studente.nome}}</td>
+        <td>{{studente.cognome}}</td>
+        <td>{{studente.classe}}</td>
+        <td><button class="btn btn-danger" (click)="elimina(i)">Elimina</button></td>
+      </tr>
+    </tbody>
+  </table>
+

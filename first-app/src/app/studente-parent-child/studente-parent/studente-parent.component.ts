@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Studente } from 'src/app/common/studente.class';
+import { IStudente } from 'src/app/common/studente.interface';
 
 @Component({
   selector: 'app-studente-parent',
@@ -7,9 +7,9 @@ import { Studente } from 'src/app/common/studente.class';
   styleUrls: ['./studente-parent.component.css']
 })
 export class StudenteParentComponent {
-  studenti: Studente[] = [];  
+  studenti: IStudente[] = [];  
 
-  aggiungiStudente(studente: Studente): void {
+  aggiungiStudente(studente: IStudente): void {
     this.studenti.push(studente);
     console.log(this.studenti);
   }

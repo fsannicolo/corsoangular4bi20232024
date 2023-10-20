@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Studente } from 'src/app/common/studente.class';
+import { IStudente } from 'src/app/common/studente.interface';
 
 @Component({
   selector: 'app-studente-in-child',
@@ -7,7 +8,7 @@ import { Studente } from 'src/app/common/studente.class';
   styleUrls: ['./studente-in-child.component.css']
 })
 export class StudenteInChildComponent {
-  @Input() studenti!: Studente[];
+  @Input() studenti!: IStudente[];
   @Output() onElimina = new EventEmitter<number>();
 
   elimina(i: number): void {
