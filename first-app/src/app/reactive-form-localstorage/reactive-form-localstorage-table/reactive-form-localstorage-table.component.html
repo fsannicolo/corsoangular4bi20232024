@@ -1,0 +1,32 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-primary w-100" (click)="loadData()">Carica i dati</button>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary w-100" (click)="saveData()">Salva i dati</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <table class="table mt-5" *ngIf="insegnanti">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Cognome</th>
+        <th scope="col">Materie</th>
+        <th scope="col"></th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let insegnante of insegnanti; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{insegnante.nome}}</td>
+        <td>{{insegnante.cognome}}</td>
+        <td><span class="badge text-bg-primary p-1 m-1" *ngFor="let materia of insegnante.materie">{{materia}}</span></td>
+        <td><button class="btn btn-success mx-2" (click)="modificaInsegnante(i)" >Modifica</button><button class="btn btn-danger ml-2" (click)="eliminaInsegnante(i)">Elimina</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

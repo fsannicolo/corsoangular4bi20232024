@@ -1,0 +1,42 @@
+<form class="row g-3" [formGroup]="formInsegnante" (ngSubmit)="onSubmit()">
+    <div class="col-md-12">
+        <label for="inputNome" class="form-label">Nome</label>
+        <input type="text" class="form-control" formControlName="nome" #inputNome 
+            [class.is-invalid]="formInsegnante.controls['nome'].touched && !formInsegnante.controls['nome'].valid"
+            [class.is-valid]="formInsegnante.controls['nome'].valid">
+        <div class="invalid-feedback">
+            Il nome è obbligatorio
+        </div>
+    </div>
+    <div class="col-md-12">
+        <label for="inputCognome" class="form-label">Cognome</label>
+        <input type="text" class="form-control" formControlName="cognome" id="inputCognome"
+            [class.is-invalid]="formInsegnante.controls['cognome'].touched && !formInsegnante.controls['cognome'].valid"
+            [class.is-valid]="formInsegnante.controls['cognome'].valid">
+        <div class="invalid-feedback">
+            Il cognome è obbligatorio
+        </div>
+    </div>
+
+    <div class="row mt-5 p-2 border-bottom" formArrayName="materie">
+        <div class="col-md-9">
+            <label for="inputMateria" class="form-label lead"><strong>Materie</strong></label>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-success w-100" (click)="nuovaMateria()">Aggiungi</button>
+        </div>
+    </div>
+    <div class="col-md-12" formArrayName="materie">
+        <div class="row" *ngFor="let control of materieControls; let i=index">
+            <div class="col-md-10 mt-3">
+                <input type="text" class="form-control" [formControl]="control" #inputMateria>
+            </div>
+            <div class="col-md-2 mt-3">
+                <button class="btn btn-danger" (click)="eliminaMateria(i)">Elimina</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mt-5">
+        <button class="btn btn-primary" type="submit" [disabled]="!formInsegnante.valid">Salva</button>
+    </div>
+</form>

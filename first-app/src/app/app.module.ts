@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,10 @@ import { LogEmitterComponent } from './subject/log-emitter/log-emitter.component
 import { LogReceiverAComponent } from './subject/log-receiver-a/log-receiver-a.component';
 import { LogReceiverBComponent } from './subject/log-receiver-b/log-receiver-b.component';
 import { HttpclientComponent } from './httpclient/httpclient.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveFormLocalstorageContainerComponent } from './reactive-form-localstorage/reactive-form-localstorage-container/reactive-form-localstorage-container.component';
+import { ReactiveFormLocalstorageFormComponent } from './reactive-form-localstorage/reactive-form-localstorage-form/reactive-form-localstorage-form.component';
+import { ReactiveFormLocalstorageTableComponent } from './reactive-form-localstorage/reactive-form-localstorage-table/reactive-form-localstorage-table.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -36,7 +40,9 @@ const routes: Routes = [
   {path: 'studente-service', component: StudenteContainerComponent},
   {path: 'observables', component: ObservablesContainerComponent},
   {path: 'subject', component: SubjectContainerComponent},
-  {path: 'httpclient', component: HttpclientComponent}
+  {path: 'httpclient', component: HttpclientComponent},
+  {path: 'reactive-form', component: ReactiveFormComponent},
+  {path: 'reactive-form-ls', component: ReactiveFormLocalstorageContainerComponent}
 ]
 
 
@@ -63,12 +69,17 @@ const routes: Routes = [
     LogEmitterComponent,
     LogReceiverAComponent,
     LogReceiverBComponent,
-    HttpclientComponent
+    HttpclientComponent,
+    ReactiveFormComponent,
+    ReactiveFormLocalstorageContainerComponent,
+    ReactiveFormLocalstorageFormComponent,
+    ReactiveFormLocalstorageTableComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
